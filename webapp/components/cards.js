@@ -1,3 +1,4 @@
+import HTMLCustomElement from './HTMLCustomElement.js';
 import FreeStyle from 'free-style';
 import postcssJs from 'postcss-js';
 import autoprefixer from 'autoprefixer';
@@ -18,18 +19,13 @@ var CardsStyle = Style.registerStyle(prefixer({
   boxSizing: 'border-box'
 }));
 
-Style.registerRule('slot', prefixer({
-  flex: '0 0 33.3%'
-}));
-
-skate.define('x-cards', {
-  render(elem) {
-    // By separating the strings (and not using template literals or string
-    // concatenation) it ensures the strings are diffed indepenedently. If
-    // you select "Count" with your mouse, it will not deselect whenr endered.
-    return [
-      skate.h('style', Style.getStyles()),
-      skate.h('div', {class: CardsStyle}, skate.h('slot'))
-    ];
+class Cards extends HTMLCustomElement {
+  init() {
+    this.innerHTML = `
+      <style>${Style.getStyles()}</style>
+      <div class="${CardsStyle}">${this.innerHTML}</div>
+    `;
   }
-});
+}
+
+customElements.define('x-cards', Cards);

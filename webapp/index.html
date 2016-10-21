@@ -11,26 +11,31 @@
         margin: 0
       }
     </style>
-</head>
-<body>
-<script>
-    if (location.origin.match(/localhost/)) {
+
+    <script>
+      if (location.origin.match(/localhost/)) {
         // enable debug
         System.trace = true;
         System.import('jspm-caddy-hmr').then(function (Watcher) {
-            new Watcher.default('/watch');  // chokidar-socket-emitter port
+          new Watcher.default('/watch');  // chokidar-socket-emitter port
         });
-    }
+      }
 
-    window.addEventListener('WebComponentsReady', function(e) {
-      // imports are loaded and elements have been registered
-      console.log('Components are ready');
-    });
+      window.addEventListener('WebComponentsReady', function(e) {
+        // imports are loaded and elements have been registered
+        console.log('Components are ready');
+      });
 
-    System.import('/webapp/index.js');
-</script>
-<my-element>
-  some content
-</my-element>
+      System.import('/webapp/index.js');
+    </script>
+</head>
+<body>
+<x-cards>
+  <x-card>one</x-card>
+  <x-card>two</x-card>
+  <x-card>three</x-card>
+  <x-card>four</x-card>
+  <x-card>fifth</x-card>
+</x-cards>
 </body>
 </html>
