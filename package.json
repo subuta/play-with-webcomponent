@@ -3,10 +3,10 @@
     "main": "app.js",
     "dependencies": {
       "autoprefixer": "npm:autoprefixer@^6.5.1",
+      "document-register-element": "npm:document-register-element@^1.2.0",
       "free-style": "npm:free-style@^2.0.0",
       "jspm-caddy-hmr": "npm:jspm-caddy-hmr@^0.2.10",
-      "postcss-js": "npm:postcss-js@^0.1.3",
-      "webcomponents.js": "npm:webcomponents.js@^0.7.22"
+      "postcss-js": "npm:postcss-js@^0.1.3"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",

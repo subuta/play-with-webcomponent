@@ -37,6 +37,7 @@ SystemJS.config({
   map: {
     'autoprefixer': 'npm:autoprefixer@6.5.1',
     'child_process': 'github:jspm/nodelibs-child_process@0.2.0-alpha',
+    'document-register-element': 'npm:document-register-element@1.2.0',
     'events': 'github:jspm/nodelibs-events@0.2.0-alpha',
     'free-style': 'npm:free-style@2.0.0',
     'path': 'github:jspm/nodelibs-path@0.2.0-alpha',
@@ -53,8 +54,7 @@ SystemJS.config({
     'stream': 'github:jspm/nodelibs-stream@0.2.0-alpha',
     'timers': 'github:jspm/nodelibs-timers@0.2.0-alpha',
     'util': 'github:jspm/nodelibs-util@0.2.0-alpha',
-    'vm': 'github:jspm/nodelibs-vm@0.2.0-alpha',
-    'webcomponents.js': 'npm:webcomponents.js@0.7.22'
+    'vm': 'github:jspm/nodelibs-vm@0.2.0-alpha'
   },
   packages: {
     'github:jspm/nodelibs-string_decoder@0.2.0-alpha': {
