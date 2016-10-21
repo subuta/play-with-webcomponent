@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>play-web-component</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="/jspm_packages/system.js"></script>
+    <script src="/jspm.config.js"></script>
+    <style>
+      body {
+        margin: 0
+      }
+    </style>
+</head>
+<body>
+<script>
+    if (location.origin.match(/localhost/)) {
+        // enable debug
+        System.trace = true;
+        System.import('jspm-caddy-hmr').then(function (Watcher) {
+            new Watcher.default('/watch');  // chokidar-socket-emitter port
+        });
+    }
+
+    window.addEventListener('WebComponentsReady', function(e) {
+      // imports are loaded and elements have been registered
+      console.log('Components are ready');
+    });
+
+    System.import('/webapp/index.js');
+</script>
+<h1>hello!</h1>
+</body>
+</html>
